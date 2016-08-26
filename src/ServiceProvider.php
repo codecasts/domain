@@ -1,6 +1,6 @@
 <?php
 
-namespace Codecats\Domain;
+namespace Codecasts\Domain;
 
 use ReflectionClass;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
