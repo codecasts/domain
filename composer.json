@@ -10,5 +10,12 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "artesaos/migrator": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codecasts\\Domain\\": "src/"
+        }
+    }
 }
