@@ -1,0 +1,21 @@
+{
+    "name": "codecasts/domain",
+    "description": "Domain Support Providers and Base Classes",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Diego Hernandes",
+            "email": "diego@hernandev.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "artesaos/migrator": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codecasts\\Domain\\": "src/"
+        }
+    }
+}
