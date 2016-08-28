@@ -8,11 +8,9 @@ use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class ModelFactory
+ * Class ModelFactory.
  *
  * Base Factory for usage inside domains.
- *
- * @package Codecasts\Domain
  */
 abstract class ModelFactory
 {
@@ -45,7 +43,7 @@ abstract class ModelFactory
      */
     public function define()
     {
-        $this->factory->define($this->model, function() {
+        $this->factory->define($this->model, function () {
             return $this->fields();
         });
     }
