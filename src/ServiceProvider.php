@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 use Migrator\MigratorTrait as HasMigrations;
 
 /**
- * Abstract ServiceProvider for Domains
+ * Abstract ServiceProvider for Domains.
  */
 abstract class ServiceProvider extends LaravelServiceProvider
 {
@@ -16,32 +16,32 @@ abstract class ServiceProvider extends LaravelServiceProvider
     use HasMigrations;
 
     /**
-     * @var string Domain alias for translations and other keys.
+     * @var string Domain alias for translations and other keys
      */
     protected $alias;
 
     /**
-     * @var array Contract bindings.
+     * @var array Contract bindings
      */
     protected $bindings = [];
 
     /**
-     * @var array List of migrations provided by Domain.
+     * @var array List of migrations provided by Domain
      */
     protected $migrations = [];
 
     /**
-     * @var array List of seeders provided by Domain.
+     * @var array List of seeders provided by Domain
      */
     protected $seeders = [];
 
     /**
-     * @var array List of model factories to load.
+     * @var array List of model factories to load
      */
     protected $factories = [];
 
     /**
-     * @var bool Enable translations for this Domain.
+     * @var bool Enable translations for this Domain
      */
     protected $hasTranslations = false;
 
@@ -75,8 +75,8 @@ abstract class ServiceProvider extends LaravelServiceProvider
      */
     protected function registerBindings(Collection $bindings)
     {
-        $bindings->each(function($abstraction, $concrete) {
-            $this->app->bindShared($abstraction, $concrete);
+        $bindings->each(function ($concretion, $abstraction) {
+            $this->app->bind($abstraction, $concretion);
         });
     }
 
@@ -102,8 +102,8 @@ abstract class ServiceProvider extends LaravelServiceProvider
 
     protected function registerFactories(Collection $factories)
     {
-        $factories->each(function($factoryName) {
-            (new $factoryName)->define();
+        $factories->each(function ($factoryName) {
+            (new $factoryName())->define();
         });
     }
 
